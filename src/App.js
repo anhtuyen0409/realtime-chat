@@ -2,8 +2,10 @@
 
 function App() {
   return (
-    <div className="App">
-      <h1>NAT Chat</h1>
+    <div className="h-screen bg-green-500 flex justify-center items-center">
+      <h1 className="text-3xl uppercase text-white font-bold">
+        NAT Chat
+      </h1>
     </div>
   );
 }
