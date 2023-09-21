@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Register() {
     const [user, setUser] = React.useState({
@@ -6,6 +7,11 @@ function Register() {
         email: '',
         password: '',
     })
+
+    const registerUser = async () => {
+        console.log(user);
+    }
+
     return (
         <div className="h-screen bg-primary flex items-center justify-center">
             <div className="bg-white shadow-md p-5 flex flex-col gap-5 w-96">
@@ -21,15 +27,19 @@ function Register() {
                     onChange={(e) => setUser({...user, email: e.target.value})}
                     placeholder="Enter your email"
                 />
-                <input type="text"
+                <input type="password"
                     value={user.password}
                     onChange={(e) => setUser({...user, password: e.target.value})}
                     placeholder="Enter your password"
                 />
 
-                <button className="contained-btn">
+                <button className="contained-btn" onClick={registerUser}>
                     Register
                 </button>
+
+                <Link to="/login" className="underline">
+                    Already have an account? Login
+                </Link>
             </div>
         </div>
     )
