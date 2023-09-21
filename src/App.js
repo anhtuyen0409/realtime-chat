@@ -1,11 +1,18 @@
-
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Home from "./pages/home";
+import Login from "./pages/login";
+import Register from "./pages/register";
 
 function App() {
   return (
-    <div className="h-screen bg-green-500 flex justify-center items-center">
-      <h1 className="text-3xl uppercase text-white font-bold">
-        NAT Chat
-      </h1>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
